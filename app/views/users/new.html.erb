@@ -1,6 +1,19 @@
-<%= form_for @user do |f| %><br>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
+<%= form_for @user do |f| %>
+
+  <%- if @user.errors.any? %>
+    <div class="notification is-danger">
+      Oops!! parece que algo salio mal.
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :name, class: 'label' %>
+    <div class="control">
+      <%= f.text_field :name, class: 'input' %>
+    </div>
+  </div>
+  </div class="field">  
+     <%= f.label :name, class: 'label' %>
 
     <%= f.label :inscription %><br>
     <%= f.text_field :inscription %><br>
@@ -17,5 +30,5 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %><br>
 
-    <%= f.submit %>
+    <%= f.submit class: 'button is-primary' %>
 <% end %>
