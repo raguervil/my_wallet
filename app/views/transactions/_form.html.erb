@@ -1,0 +1,42 @@
+<%= form_for @transaction, builder: BulmaFormBuilder do |f|%>
+  <%= f.form_error %>
+
+  <div class="field">
+    <%= f.label :date, class: 'label' %>
+    <div class="control">
+      <%= f.text_field :date, class: 'input' %>
+    </div>
+    <%= f.field_error :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :transaction_type, class: 'label' %>
+    <div class="control">
+      <%= f.text_field :transaction_type, class: 'input' %>
+    </div>
+    <%= f.field_error :transaction_type %>
+  </div>
+  <div class="field">
+    <%= f.label :amount, class: 'label' %>
+    <div class="control">
+      <%= f.text_field :amount, class: 'input' %>
+    </div>
+    <%= f.field_error :amount %>
+  </div>
+   <div class="field">
+    <%= f.label :category, class: 'label' %>
+    <div class="control">
+      <%= f.file_field :category, class: 'input' %>
+    </div>
+    <%= f.field_error :category %>
+  </div>
+  <div class="field">
+    <%= f.label :description, class: 'label' %>
+    <div class="control">
+      <%= f.text_field :description, class: 'input' %>
+    </div>
+    <%= f.field_error :description %>
+  </div>
+
+  <%= f.submit class: 'button is-primary'%>
+<% end %>
